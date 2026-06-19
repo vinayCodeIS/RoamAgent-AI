@@ -205,7 +205,13 @@ async function startServer() {
       res.status(201).json({ trip });
     } catch (err: any) {
       console.error("AI Generation error: ", err);
-      res.status(500).json({ error: 'Failed to generate itinerary. Please try again in a few moments.' });
+      if (!process.env.GEMINI_API_KEY) {
+        return res.status(500).json({ error: 'Missing GEMINI_API_KEY in server environment. Please define GEMINI_API_KEY in your Render dashboard environment variables.' });
+      }
+      res.status(500).json({
+        error: 'Failed to generate itinerary. Please try again in a few moments.',
+        details: err?.message || String(err)
+      });
     }
   });
 

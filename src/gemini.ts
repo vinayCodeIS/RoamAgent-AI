@@ -65,7 +65,7 @@ You must structure the response with:
 
   const ai = getAi();
   const response = await ai.models.generateContent({
-    model: "gemini-3.1-flash-lite",
+    model: "gemini-3.5-flash",
     contents: prompt,
     config: {
       systemInstruction: `You are an expert global travel planner agent. You generate high-quality, practical travel itineraries and accurate, localized budget estimations in clean, validated JSON format. Ensure names and locations are real and interesting. Do not include extra markdown outside of the JSON block.`,
@@ -166,7 +166,7 @@ Create a modified DayPlan substituting current activities with new ones centered
 
   const ai = getAi();
   const response = await ai.models.generateContent({
-    model: "gemini-3.1-flash-lite",
+    model: "gemini-3.5-flash",
     contents: prompt,
     config: {
       systemInstruction: `You are an expert travel planner modifier. Create high quality modified schedules strictly according to user instructions. Output only the requested DayPlan in valid JSON format.`,

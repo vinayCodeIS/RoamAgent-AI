@@ -109,7 +109,8 @@ export default function App() {
 
       const data = await response.json();
       if (!response.ok) {
-        throw new Error(data.error || 'AI generation failed');
+        const errorMsg = data.details ? `${data.error} DETAILS: ${data.details}` : (data.error || 'AI generation failed');
+        throw new Error(errorMsg);
       }
 
       // Add to trips state list and focus on it
@@ -158,11 +159,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#FDFCFB] text-[#2C2C2C] flex flex-col font-sans" id="app-root-workspace">
-      
+
       {/* GLOBAL NAVBAR HEADER */}
       <header className="bg-white border-b border-[#E6E2DD] sticky top-0 z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-          
+
           <div className="flex items-center gap-2.5">
             <button
               id="mobile-sidebar-toggle-btn"
@@ -202,7 +203,7 @@ export default function App() {
 
       {/* CORE FRAME LAYOUT */}
       <div className="flex-1 flex max-w-7xl w-full mx-auto relative">
-        
+
         {/* MOBILE SIDEBAR BACKSTAGE BLANKET COVER */}
         <AnimatePresence>
           {showMobileSidebar && (
@@ -215,14 +216,14 @@ export default function App() {
             />
           )}
         </AnimatePresence>
-        
+
         {/* SIDEBAR: SAVED ITINERARIES PANEL */}
         <aside className={`
           fixed inset-y-16 left-0 z-30 w-72 bg-[#FAF9F6] border-r border-[#E6E2DD] p-5 shrink-0 overflow-y-auto transform transition-transform duration-300 lg:translate-x-0 lg:static
           ${showMobileSidebar ? 'translate-x-0 bg-white' : '-translate-x-full'}
         `} id="trips-sidebar-panel">
           <div className="space-y-4">
-            
+
             <button
               id="sidebar-new-search-btn"
               onClick={() => {
@@ -256,11 +257,10 @@ export default function App() {
                           setActiveTrip(savedTrip);
                           setShowMobileSidebar(false);
                         }}
-                        className={`w-full text-left p-3.5 rounded-xl flex items-center justify-between text-xs transition-all border cursor-pointer ${
-                          isSelected
+                        className={`w-full text-left p-3.5 rounded-xl flex items-center justify-between text-xs transition-all border cursor-pointer ${isSelected
                             ? 'bg-white border-[#4A6741] text-[#4A6741] font-bold shadow-sm'
                             : 'bg-white/40 hover:bg-white border-[#E6E2DD] text-[#6B6B6B] hover:text-[#2C2C2C]'
-                        }`}
+                          }`}
                       >
                         <div className="min-w-0 pr-2">
                           <p className={`font-serif text-sm font-medium leading-tight truncate ${isSelected ? 'text-[#4A6741]' : 'text-[#2C2C2C]'}`}>{savedTrip.destination}</p>

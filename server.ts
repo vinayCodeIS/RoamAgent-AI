@@ -7,22 +7,22 @@ import crypto from 'node:crypto';
 // Load ecosystem variables
 dotenv.config();
 
-import { 
-  createUser, 
-  getUserByEmail, 
-  generateToken, 
-  verifyToken, 
-  getTripsByUserId, 
-  getTripById, 
-  createTrip, 
-  updateTrip, 
+import {
+  createUser,
+  getUserByEmail,
+  generateToken,
+  verifyToken,
+  getTripsByUserId,
+  getTripById,
+  createTrip,
+  updateTrip,
   deleteTrip,
   verifyPassword
 } from './src/db.js';
 import { generateTripPlan, regenerateDayPlan } from './src/gemini.js';
 import { Trip, Activity, PackingItem, ExpenseItem } from './src/types.js';
 
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 // Token validation middleware
 function authenticate(req: any, res: any, next: any) {
@@ -140,7 +140,7 @@ async function startServer() {
   // GENERATE NEW AI TRIP ITINERARY
   app.post('/api/trips/generate', authenticate, async (req: any, res) => {
     const { destination, numDays, budgetType, interests } = req.body;
-    
+
     if (!destination || !numDays || !budgetType) {
       return res.status(400).json({ error: 'Missing required parameters: destination, days, or budget type.' });
     }
@@ -356,7 +356,7 @@ async function startServer() {
   app.post('/api/trips/:id/expenses/add', authenticate, (req: any, res) => {
     const { category, name, amount } = req.body;
     const expenseAmt = parseFloat(amount);
-    
+
     if (!category || !name || isNaN(expenseAmt) || expenseAmt < 0) {
       return res.status(400).json({ error: 'Valid category, name, and positive amount are required.' });
     }

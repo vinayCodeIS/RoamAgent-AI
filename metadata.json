@@ -1,0 +1,6 @@
+{
+  "name": "AI Travel Planner",
+  "description": "Multi-user travel planner that generates day-by-day itineraries, estimates budgets, recommends hotels, and provides interactive expense and packing trackers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,258 @@
+[
+  {
+    "userId": "d3a69f70-f915-4828-83e1-c83736c51876",
+    "destination": "india,hyderabad",
+    "numDays": 5,
+    "budgetType": "Medium",
+    "interests": [],
+    "days": [
+      {
+        "dayNumber": 1,
+        "title": "Old City Heritage Exploration",
+        "activities": [
+          {
+            "id": "1a749f73-a518-4a9e-a072-45169ae393cc",
+            "timeOfDay": "Morning",
+            "name": "Charminar Visit",
+            "description": "Explore the iconic 16th-century monument and take in the panoramic city views from the top.",
+            "category": "Culture"
+          },
+          {
+            "id": "08c74343-4508-4296-9910-10c6d1b17aad",
+            "timeOfDay": "Afternoon",
+            "name": "Laad Bazaar Shopping",
+            "description": "Walk through the bustling historic market famous for authentic Hyderabadi bangles and bridal wear.",
+            "category": "Shopping"
+          },
+          {
+            "id": "2557ab04-ef02-4bbe-a9d1-fb077413bbc8",
+            "timeOfDay": "Evening",
+            "name": "Mecca Masjid Dinner",
+            "description": "Dine at a local restaurant near the mosque to taste authentic Hyderabadi Dum Biryani.",
+            "category": "Food"
+          }
+        ]
+      },
+      {
+        "dayNumber": 2,
+        "title": "Heritage and Hydrology in Hyderabad",
+        "activities": [
+          {
+            "timeOfDay": "Morning",
+            "name": "Ujjani Reservoir Exploration",
+            "description": "Travel to the serene waters of the Ujjani area to witness the expansive reservoir and its natural surroundings, offering a calm start to the day.",
+            "category": "Nature",
+            "id": "6ea70856-2324-4004-9b8d-8cd575bdcde8"
+          },
+          {
+            "timeOfDay": "Afternoon",
+            "name": "Local Craft and Culinary Experience",
+            "description": "Engage with local artisans near the reservoir area to learn about regional handicrafts and enjoy an authentic medium-budget Hyderabadi lunch.",
+            "category": "Culture",
+            "id": "4fff0e51-dbb5-42d1-b486-84dc61818ed1"
+          },
+          {
+            "timeOfDay": "Evening",
+            "name": "Sunset Views at the Dam Site",
+            "description": "Experience the panoramic views of the water at sunset, providing a peaceful conclusion to your visit to the Ujjani region.",
+            "category": "Leisure",
+            "id": "4f5013d5-0359-4941-bb90-a719e90a553d"
+          }
+        ]
+      },
+      {
+        "dayNumber": 3,
+        "title": "Palaces and Museums",
+        "activities": [
+          {
+            "id": "88feebc6-8b5f-406c-b0ca-754dd40f0f05",
+            "timeOfDay": "Morning",
+            "name": "Chowmahalla Palace",
+            "description": "Tour the opulent former residence of the Nizams of Hyderabad, showcasing elegant courtyards and vintage cars.",
+            "category": "Culture"
+          },
+          {
+            "id": "3c51c5b9-a31b-4d2a-81d7-a472de06642f",
+            "timeOfDay": "Afternoon",
+            "name": "Salar Jung Museum",
+            "description": "Spend hours exploring one of the largest one-man collections of antiques in the world.",
+            "category": "Culture"
+          },
+          {
+            "id": "ee114225-f16d-48a3-a8f9-86e9ef7f2c1a",
+            "timeOfDay": "Evening",
+            "name": "Necklace Road Promenade",
+            "description": "Stroll along the picturesque Hussain Sagar Lake for a relaxing evening breeze.",
+            "category": "Nature"
+          }
+        ]
+      },
+      {
+        "dayNumber": 4,
+        "title": "Modern Hyderabad and Gardens",
+        "activities": [
+          {
+            "id": "dae70bcd-bf7b-46be-b813-d290701c9331",
+            "timeOfDay": "Morning",
+            "name": "Birla Mandir",
+            "description": "Visit this stunning white marble temple built on a hillock overlooking the city.",
+            "category": "Culture"
+          },
+          {
+            "id": "ff1c97f6-d8a3-494d-b2ef-f0e091e670f4",
+            "timeOfDay": "Afternoon",
+            "name": "Botanical Gardens",
+            "description": "Take a refreshing walk through the greenery and unique plant species at this expansive garden.",
+            "category": "Nature"
+          },
+          {
+            "id": "084595ad-08f4-49d5-b63e-b98ce554233f",
+            "timeOfDay": "Evening",
+            "name": "Inorbit Mall Excursion",
+            "description": "Experience modern retail therapy and local cafe culture in the upscale HITEC City area.",
+            "category": "Shopping"
+          }
+        ]
+      },
+      {
+        "dayNumber": 5,
+        "title": "Leisure and Culinary Farewell",
+        "activities": [
+          {
+            "id": "a1649b63-7736-4ff5-9a08-dfcf14ec4f8e",
+            "timeOfDay": "Morning",
+            "name": "Ramoji Film City",
+            "description": "Spend the full morning at the world's largest integrated film studio complex.",
+            "category": "Adventure"
+          },
+          {
+            "id": "d28a8b01-968b-4c78-a36d-bf20aa9cd7be",
+            "timeOfDay": "Afternoon",
+            "name": "Haleem Tasting",
+            "description": "Sample the famous Hyderabadi Haleem at a legendary local eatery like Pista House.",
+            "category": "Food"
+          },
+          {
+            "id": "91fdec1c-5d71-4ccd-95f8-c98ecd3ef529",
+            "timeOfDay": "Evening",
+            "name": "Lumbini Park",
+            "description": "Enjoy a tranquil evening boat ride on Hussain Sagar Lake with views of the Buddha statue.",
+            "category": "Nature"
+          }
+        ]
+      }
+    ],
+    "budgetBreakdown": {
+      "flights": 800,
+      "accommodation": 450,
+      "food": 250,
+      "activities": 200,
+      "total": 1700
+    },
+    "hotels": [
+      {
+        "name": "Zostel Hyderabad",
+        "tier": "Budget Friendly",
+        "priceEstimate": "$25/night",
+        "rating": "4.5/5",
+        "description": "A vibrant, clean hostel perfect for solo travelers and those looking for a social atmosphere."
+      },
+      {
+        "name": "Lemon Tree Hotel, Banjara Hills",
+        "tier": "Mid Range",
+        "priceEstimate": "$80/night",
+        "rating": "4.2/5",
+        "description": "Reliable, comfortable, and centrally located with great service and modern amenities."
+      },
+      {
+        "name": "Taj Falaknuma Palace",
+        "tier": "Luxury",
+        "priceEstimate": "$500/night",
+        "rating": "4.9/5",
+        "description": "An opulent former royal palace offering a world-class, regal experience high above the city."
+      }
+    ],
+    "packingList": [
+      {
+        "id": "b9e21e49-6108-475c-897f-a716cf06b68a",
+        "name": "Lightweight cotton clothing",
+        "category": "Clothing",
+        "packed": false
+      },
+      {
+        "id": "9777f413-7c92-4fe3-b307-2f1cfcd4f5ec",
+        "name": "Comfortable walking shoes",
+        "category": "Essentials",
+        "packed": false
+      },
+      {
+        "id": "dc4ed145-21b0-433c-a96f-9cf872f763fe",
+        "name": "Sunscreen and sunglasses",
+        "category": "Toiletries",
+        "packed": false
+      },
+      {
+        "id": "9d074e0f-e632-4a2c-9b5b-0e88d61f4cc0",
+        "name": "Universal travel adapter",
+        "category": "Electronics",
+        "packed": false
+      },
+      {
+        "id": "6ca1fe96-699d-4ab3-a6f4-68f19519b4a0",
+        "name": "Portable power bank",
+        "category": "Electronics",
+        "packed": false
+      },
+      {
+        "id": "7b29ab4d-bbe9-45dd-884c-9b3650082b9d",
+        "name": "Passport and visa documents",
+        "category": "Documents",
+        "packed": false
+      },
+      {
+        "id": "d487cae3-be10-4ed3-8626-ca0de6c4ab8f",
+        "name": "Scarf for temple visits",
+        "category": "Clothing",
+        "packed": false
+      },
+      {
+        "id": "a59a3a1b-90f9-457e-b3f9-c2b338c00dff",
+        "name": "Hand sanitizer",
+        "category": "Essentials",
+        "packed": false
+      }
+    ],
+    "expenses": [
+      {
+        "id": "e3c45182-3dd3-4d3e-8d33-7c7283b53b80",
+        "category": "Flights",
+        "name": "Estimated Round-Trip Flight",
+        "amount": 800,
+        "isActual": false
+      },
+      {
+        "id": "22f1bfaa-3f96-4a65-9462-4ac607afbc81",
+        "category": "Accommodation",
+        "name": "Estimated Accommodation Package",
+        "amount": 450,
+        "isActual": false
+      },
+      {
+        "id": "cf7da968-6683-4d3f-91b8-242db48b84f2",
+        "category": "Food",
+        "name": "Estimated Meals Food allocation",
+        "amount": 250,
+        "isActual": false
+      },
+      {
+        "id": "64b4005e-29b9-41b9-951b-cdbc927f2ec6",
+        "category": "Activities",
+        "name": "Estimated Sightseeing entry/tours",
+        "amount": 200,
+        "isActual": false
+      }
+    ],
+    "id": "c5ba9771-74b0-4bfb-a054-1cf3735b8360",
+    "createdAt": "2026-06-19T10:58:46.527Z"
+  }
+]

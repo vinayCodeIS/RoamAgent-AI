@@ -118,4 +118,4 @@ When creating your assignment walkthrough video, follow this optimal structure:
 
 ---
 
-*Enjoy curating your next escape! Developed with 💚 by the AI Build team.*
+

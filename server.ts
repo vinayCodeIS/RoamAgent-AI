@@ -205,12 +205,28 @@ async function startServer() {
       res.status(201).json({ trip });
     } catch (err: any) {
       console.error("AI Generation error: ", err);
+
+      const rawKey = process.env.GEMINI_API_KEY || '';
+      const keyLength = rawKey.length;
+      const keyPrefix = rawKey.substring(0, 6);
+      const isAIzaSy = rawKey.startsWith('AIzaSy');
+      const isAQKey = rawKey.startsWith('AQ.');
+      const isValidFormat = isAIzaSy || isAQKey;
+      const hasQuotes = (rawKey.startsWith('"') && rawKey.endsWith('"')) || (rawKey.startsWith("'") && rawKey.endsWith("'"));
+      const isOAuthToken = rawKey.startsWith('ya29.');
+
+      let keyDiagnostic = `[Diagnostics -> Length: ${keyLength} chars | Prefix: "${keyPrefix}" | Valid API Key Format (starts with AIzaSy or AQ.): ${isValidFormat}`;
+      if (hasQuotes) keyDiagnostic += ` | WARNING: Your key has leading/trailing quote characters! Please remove outer quotes from your Render environment variable value.`;
+      if (isOAuthToken) keyDiagnostic += ` | WARNING: Your key starts with 'ya29.', which is a temporary Google OAuth access token, not a persistent AI Studio API key!`;
+      if (isAQKey) keyDiagnostic += ` | INFO: Your key starts with 'AQ.', which is a modern format Google AI Studio API Key. This is fully supported!`;
+      keyDiagnostic += `]`;
+
       if (!process.env.GEMINI_API_KEY) {
         return res.status(500).json({ error: 'Missing GEMINI_API_KEY in server environment. Please define GEMINI_API_KEY in your Render dashboard environment variables.' });
       }
       res.status(500).json({
         error: 'Failed to generate itinerary. Please try again in a few moments.',
-        details: err?.message || String(err)
+        details: `${err?.message || String(err)} | Key Debug: ${keyDiagnostic}`
       });
     }
   });
@@ -268,7 +284,26 @@ async function startServer() {
       res.json({ trip: updated });
     } catch (err: any) {
       console.error("Regenerate day error: ", err);
-      res.status(500).json({ error: 'Failed to regenerate requested day.' });
+
+      const rawKey = process.env.GEMINI_API_KEY || '';
+      const keyLength = rawKey.length;
+      const keyPrefix = rawKey.substring(0, 6);
+      const isAIzaSy = rawKey.startsWith('AIzaSy');
+      const isAQKey = rawKey.startsWith('AQ.');
+      const isValidFormat = isAIzaSy || isAQKey;
+      const hasQuotes = (rawKey.startsWith('"') && rawKey.endsWith('"')) || (rawKey.startsWith("'") && rawKey.endsWith("'"));
+      const isOAuthToken = rawKey.startsWith('ya29.');
+
+      let keyDiagnostic = `[Diagnostics -> Length: ${keyLength} chars | Prefix: "${keyPrefix}" | Valid API Key Format (starts with AIzaSy or AQ.): ${isValidFormat}`;
+      if (hasQuotes) keyDiagnostic += ` | WARNING: Your key has leading/trailing quote characters! Please remove outer quotes from your Render environment variable value.`;
+      if (isOAuthToken) keyDiagnostic += ` | WARNING: Your key starts with 'ya29.', which is a temporary Google OAuth access token, not a persistent AI Studio API key!`;
+      if (isAQKey) keyDiagnostic += ` | INFO: Your key starts with 'AQ.', which is a modern format Google AI Studio API Key. This is fully supported!`;
+      keyDiagnostic += `]`;
+
+      res.status(500).json({
+        error: 'Failed to regenerate requested day.',
+        details: `${err?.message || String(err)} | Key Debug: ${keyDiagnostic}`
+      });
     }
   });
 
